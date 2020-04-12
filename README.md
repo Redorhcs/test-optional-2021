@@ -1,6 +1,6 @@
-# RenArt
+# Test Optional 2021
 Searchable index of Renaissance artworks
 
-![status: dead](https://img.shields.io/badge/status-dead-red) ![updated: 3/10/19](https://img.shields.io/badge/updated-3/10/20-yellow)
+![status: alive](https://img.shields.io/badge/status-alive-green) ![updated: 4/12/20](https://img.shields.io/badge/updated-4/20/20-green)
 
-<a href = "http://micahlt.github.io/renart">Visit the website</a>
+<a href = "https://redorhcs.github.io/test-optional-2021/">Visit the website</a>
