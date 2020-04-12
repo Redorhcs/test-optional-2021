@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Files forked from RenArt  by Micah Lindley-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Test Optional List</title>
+<link rel="shortcut icon" href="a198cd0c_e2f0_4c99_ba51_342624a24db9_WP4_icon.ico" type="image/x-icon"/>
+<link href = "https://fonts.googleapis.com/css?family=Nunito+Sans:400,900&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+body,#artInput{text-align: center;}
+#artInput {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/221px-Vector_search_icon.svg.png');
+  background-position: 10px 10px;;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  width: 60%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 25px;
+}
+#artInput:focus {
+  outline:none
+}
+#artTable {
+  border-collapse: collapse;
+  width: 85%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  margin-bottom:40px;
+}
+#artTable th, #artTable td {
+  text-align: left;
+  padding: 12px;
+  text-align: center;
+
+}
+#artTable tr {
+  border-bottom: 1px solid #ddd;
+
+}
+#artTable tr.header, #artTable tr:hover {
+  background-color: #f1f1f1;
+
+}
+a {
+  color: #f56642;
+}
+
+h2, h1, p {
+  font-family: 'Nunito Sans', sans-serif;
+}
+h1:hover {
+  animation-name: artshadow;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
+}
+
+@keyframes artshadow {
+  from {}
+  to {text-shadow: 2px 2px 5px black;}
+}
+h1 {
+  color: #f56642;
+  transition: 0.3s;
+}
+</style>
+</head>
+<body>
+<h1><a href="https://micahlt.github.io/renart/"><b>RenArt</b></a></h1>
+<h2>search artworks by name, artist, and more</h2>
+<div class="centerenter">
+<input type="text" id="artInput" onkeyup="artFunction()" placeholder="name, date, artist..." title="Work search">
+</div>
+<div class="tablesearch">
+<table id="artTable" align="center">
+<tr class="header">
+<th style="width:25%">School</th>
+<th style="width:25%">Test Optional</th>
+<th style="width:25%">Select Year or Permanent</th>
+<th style="width:25%">Source</th>
+</tr>
+<!-- Template
+<tr>
+<td><a href="http://SCHOOL.edu">SCHOOL</a></td>
+<td>YES/NO</td>
+<td>Fall 2021</td>
+<td>Student Search Service Email LINK</td>
+</tr>
+-->
+<tr>
+<td><a href="https://admission.tulane.edu/test-optional-2020-2021">Tulane</a></td>
+<td>YES</td>
+<td>Fall 2021</td>
+<td>Student Search Service Email</td>
+</tr>
+<tr>
+<td><a href="http://www.rhodes.edu">Rhodes College</a></td>
+<td>YES</td>
+<td>2021 - 2024</td>
+<td>1567</td>
+</tr>
+<tr>
+<td><a href="http://www.bu.edu/admissions/apply/first-year/#Tests">Boston University</a></td>
+<td>Raphael</td>
+<td>Fall 2021, Spring 2022</td>
+<td>Admissions Page</td>
+</tr>
+
+</table>
+</div>
+<p>this project was created and is maintained by <a href = "https://rts2.us/">Tyler Schroder</a>. Site Design by <a href = "https://micahlt.github.io/">Micah Lindley</a>. &#32;Last updated 4/12/20.</p>
+<script>function artFunction() {
+  // Declare starting variables
+  var input = document.getElementById("artInput");
+  var filter = input.value.toUpperCase();
+  var table = document.getElementById("artTable");
+  var trs = table.tBodies[0].getElementsByTagName("tr");
+  // Loop through rows
+  for (var i = 0; i < trs.length; i++) {
+    // Define the cells
+    var tds = trs[i].getElementsByTagName("td");
+    // hide the row
+    trs[i].style.display = "none";
+    // loop through row cells
+    for (var i2 = 0; i2 < tds.length; i2++) {
+      // if there's a match
+      if (tds[i2].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        // show the row
+        trs[i].style.display = "";
+        // skip to the next row
+        continue;
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
